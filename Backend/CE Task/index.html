@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>MY STORE</h1>
+        <button id="cartButton">
+            Shopping Cart (<span id="cartCount">0</span>)
+        </button>
+    </header>
+
+    <main>
+        <section class="products-card">
+            <h2>Products</h2>
+
+            <div class="filters">
+                <select id="category">
+                    <option value="All">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Accessories">Accessories</option>
+                </select>
+
+                <select id="sort">
+                    <option value="default">None</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+            </div>
+
+            <div id="productList"></div>
+        </section>
+    </main>
+
+    <div id="overlay"></div>
+
+    <section id="cartPopup">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button id="closeCart" class="close-button">&times;</button>
+        </div>
+
+        <p class="item-count">Items in cart: <span id="itemCount">0</span></p>
+
+        <div id="cartItems">Your cart is empty.</div>
+
+        <button id="clearCart" class="clear-button">Clear Cart</button>
+
+        <hr>
+
+        <h3>Discount Coupon</h3>
+
+        <div class="coupon">
+            <input type="text" id="coupon" placeholder="Enter coupon code">
+            <button id="apply">Apply</button>
+        </div>
+
+        <p id="message"></p>
+
+        <div class="bill">
+            <p>Subtotal <span>₹<span id="subtotal">0.00</span></span></p>
+            <p>Discount <span>₹<span id="discount">0.00</span></span></p>
+            <h3>Total <span>₹<span id="total">0.00</span></span></h3>
+        </div>
+
+        <button id="checkout">Proceed to Checkout</button>
+
+        <div id="checkoutBox" hidden>
+            <hr>
+            <h3>Checkout</h3>
+
+            <form id="checkoutForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+
+                <label for="address">Address</label>
+                <textarea id="address" required></textarea>
+
+                <button type="submit">Place Order</button>
+            </form>
+
+            <p id="result"></p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
